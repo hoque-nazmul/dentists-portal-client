@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {  faChartLine, faCalendarCheck, faUserFriends, faFileAlt, faCog } from '@fortawesome/free-solid-svg-icons'
 
 const AdminSideBar = () => {
     return (
@@ -7,19 +9,19 @@ const AdminSideBar = () => {
                 <div className="sb-sidenav-menu">
                     <div className="nav">
                         <a className="nav-link" href="/doctorsDashboard"
-                        ><div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
+                        ><div className="sb-nav-link-icon"><FontAwesomeIcon icon={faChartLine} /></div>
                                 Doctor's Dashboard</a>
-                        <a className="nav-link" href="/doctorsDashboard"
-                        ><div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
+                        <a className="nav-link" href="/doctorsAppointment"
+                        ><div className="sb-nav-link-icon"><FontAwesomeIcon icon={faCalendarCheck} /></div>
                                 Doctor's Appointment</a>
-                        <a className="nav-link" href="/doctorsDashboard"
-                        ><div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
+                        <a className="nav-link" href="/hello"
+                        ><div className="sb-nav-link-icon"><FontAwesomeIcon icon={faUserFriends} /></div>
                                 Patients</a>
-                        <a className="nav-link" href="/doctorsDashboard"
-                        ><div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
+                        <a className="nav-link" href="/hello"
+                        ><div className="sb-nav-link-icon"><FontAwesomeIcon icon={faFileAlt} /></div>
                                 Prescriptions</a>
-                        <a className="nav-link" href="/doctorsDashboard"
-                        ><div className="sb-nav-link-icon"><i className="fas fa-tachometer-alt"></i></div>
+                        <a className="nav-link" href="/hello"
+                        ><div className="sb-nav-link-icon"><FontAwesomeIcon icon={faCog} /></div>
                                 Settings</a>
                     </div>
                 </div>
