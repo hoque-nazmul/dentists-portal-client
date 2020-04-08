@@ -8,8 +8,8 @@ const Treatments = (props) => {
             <div className="TreatmentContent">
                 <h4>{name}</h4>
                 <h6>{time}</h6>
-                <p>{space} are available</p>
-                <button className="mainBtn">Book Appointment</button>
+                <p>{space} spaces are available</p>
+                <button onClick={() => props.handleBookedAppointment(props.treatment) } className="mainBtn">Book Appointment</button>
             </div>
         </div>
     );
