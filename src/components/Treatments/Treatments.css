@@ -1,0 +1,23 @@
+.TreatmentContent {
+    margin-bottom: 40px;
+    text-align: center;
+    border-radius: 10px;
+    padding: 30px 0px;
+    box-shadow: 5px 5px 20px #f5e1e1;
+}
+
+
+.TreatmentContent h4 {
+    color: #1CC7C1;
+    font-size: 26px;
+    margin-bottom: 15px;
+}
+
+.TreatmentContent h6 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.TreatmentContent p {
+    color: #ADABAB;
+}

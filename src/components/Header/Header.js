@@ -12,7 +12,7 @@ const Header = () => {
                         <div className="HeaderLeft">
                             <h2>Your New Smile Starts Here</h2>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis commodi nostrum quas, ex suscipit necessitatibus a dignissimos at asperiores labore. Lorem ipsum dolor sit amet.</p>
-                            <Link to="/getAppointment"><button>Get Appointment</button></Link>
+                            <Link to="/getAppointment"><button className="mainBtn">Get Appointment</button></Link>
                         </div>
                     </div>
                     <div className="col-md-4">

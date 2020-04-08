@@ -5,9 +5,14 @@
     
 }
 
-.GetAppointmentContent {
+.GetAppointmentTop {
     background-color: #f8f9facc;
     padding: 130px 0px;
+}
+
+.GetAppointmentBottom {
+    background-color: #fff;
+    padding: 60px 0px;
 }
 
 .react-calendar {
@@ -28,4 +33,11 @@
 
 .react-calendar button:focus {
     outline: none;
+}
+
+.GetAppointmentBottom h2 {
+    color: #1CC7C1;
+    font-size: 38px;
+    text-align: center;
+    margin-bottom: 30px;
 }
