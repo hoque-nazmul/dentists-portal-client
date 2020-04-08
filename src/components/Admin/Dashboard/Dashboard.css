@@ -10157,3 +10157,11 @@ body {
 .AdminPanel .bg-dark {
     background-color: #00bda0!important;
 }
+
+.AdminPanel {
+  background-color: #f5f5f5;
+}
+
+.AdminPanel footer{
+  background-color: #fff;
+}

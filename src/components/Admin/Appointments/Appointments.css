@@ -9,3 +9,39 @@
 .Appointment footer{
     background-color: #fff;
 }
+
+.AppointmentByDate {
+    width: 100%;
+    max-width: 100%;
+    background: white;
+    border: 1px solid white;
+    padding: 40px 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.125em;
+    border-radius: 10px;
+    min-height: 450px;
+}
+
+.TableHeader {
+    padding: 0px 8px;
+    margin-bottom: 10px;
+}
+
+.TableHeader h4 {
+    color: #1CC7C1;
+    font-size: 20px;
+}
+
+.TableHeader p {
+    margin-right: 15px;
+}
+
+.TableActionBtn {
+    background: #11D0DB;
+    border: 1px solid #11D0DB;
+    padding: 5px 15px;
+    border-radius: 6px;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+}

@@ -37,12 +37,27 @@ const Appointments = () => {
                                     </div>
                                 </div>
                                 <div className="col-xl-6 col-md-6 col-sm-12">
-                                    <div className="card bg-warning text-white mb-4">
-                                        <div className="card-body">Warning Card</div>
-                                        <div className="card-footer d-flex align-items-center justify-content-between">
-                                            <a className="small text-white stretched-link" href="/hello">View Details</a>
-                                            <div className="small text-white"><i className="fas fa-angle-right"></i></div>
+                                    <div className="AppointmentByDate">
+                                        <div className="TableHeader d-flex justify-content-between">
+                                            <h4>Appointments</h4>
+                                            <p>Date: {date.toLocaleDateString()}</p>
                                         </div>
+                                        <table className="table table-borderless">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Patient Name</th>
+                                                    <th scope="col">Scedule</th>
+                                                    <th scope="col">Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Mark</td>
+                                                    <td>Otto</td>
+                                                    <td><button className="TableActionBtn">Not Visited</button></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
                                     </div>
                                 </div>
                             </div>
