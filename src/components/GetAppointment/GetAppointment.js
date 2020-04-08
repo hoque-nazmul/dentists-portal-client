@@ -5,6 +5,7 @@ import { useState } from 'react';
 import 'react-calendar/dist/Calendar.css';
 import './GetAppointment.css'
 import Treatments from '../Treatments/Treatments';
+import { useForm } from 'react-hook-form'
 
 const GetAppointment = () => {
     const [date, setDate] = useState(new Date());
@@ -32,10 +33,13 @@ const GetAppointment = () => {
         setAppointmentForm(true);
     }
 
+    const { register, handleSubmit, errors } = useForm()
+    const onSubmit = data => { console.log(data) }
+
     return (
         <div className="GetAppointmentSection">
             {
-               
+
                 <div style={{ display: appointmentForm ? 'none' : 'block' }} className="GetAppointmentInfo">
                     <div className="GetAppointmentTop">
                         <div className="container">
@@ -76,13 +80,32 @@ const GetAppointment = () => {
                         </div>
                     </div>
                 </div>
-                }
-                {
-                    <div style={{ display: appointmentForm ? 'block' : 'none' }} className="AppointmentStoredForm">
-                        <h2>Hello world</h2>
+            }
+            {
+                <div style={{ display: appointmentForm ? 'block' : 'none' }} className="AppointmentStoredForm">
+                    <div className="AppointmentFormWrapper">
+                        <div className="container">
+                            <div className="row">
+                                <div className="col-md-6 offset-md-3">
+                                    <form onSubmit={handleSubmit(onSubmit)}>
+                                        <input name="example" defaultValue="test" ref={register} />
+                                        <select name="time" id="data" ref={register({ required: true })}>
+                                            {treatments.map(treatment => <option key={treatment.key} value={treatment.time}>{treatment.time}</option>)}
+                                        </select>
+                                        {errors.exampleRequired && <span>This field is required</span>}
+                                        <input name="exampleRequired" ref={register({ required: true })} />
+                                        {/* errors will return when field validation fails  */}
+                                        {errors.exampleRequired && <span>This field is required</span>}
+
+                                        <input type="submit" />
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                }
-           
+                </div>
+            }
+
         </div>
     );
 };

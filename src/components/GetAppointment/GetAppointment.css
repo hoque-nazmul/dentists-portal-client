@@ -41,3 +41,8 @@
     text-align: center;
     margin-bottom: 30px;
 }
+
+.AppointmentStoredForm {
+    background-color: #f8f9facc;
+    padding: 130px 0px;
+}
