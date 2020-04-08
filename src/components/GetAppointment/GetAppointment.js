@@ -12,6 +12,7 @@ const GetAppointment = () => {
     const [treatments, setTreatments] = useState([]);
     const [appointmentInfo, setAppointmentInfo] = useState(null);
     const [appointmentForm, setAppointmentForm] = useState(null);
+    const [appointmentMsg, setAppointmentMsg] = useState(null);
 
     // GET Treatments lists from Server
     useEffect(() => {
@@ -49,14 +50,13 @@ const GetAppointment = () => {
         })
             .then(response => response.json())
             .then(appointment => {
-                console.log(appointment)
+                setAppointmentMsg(appointment);
             })
     }
 
     return (
         <div className="GetAppointmentSection">
             {
-
                 <div style={{ display: appointmentForm ? 'none' : 'block' }} className="GetAppointmentInfo">
                     <div className="GetAppointmentTop">
                         <div className="container">
@@ -104,7 +104,6 @@ const GetAppointment = () => {
                         <div className="container">
                             <div className="row">
                                 <div className="col-md-8 offset-md-2">
-
                                     {
                                         appointmentInfo &&
                                         <div className="FormContent">
