@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.HeaderSection {
+    background-image: url('../../images/Mask\ Group\ 1.png');
+    background-attachment: fixed;
+    background-size: cover;
+    width: 100%;
+}
+
+.HeaderSection .container-fluid {
+    width: 100%;
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.HeaderSection .row {
+    background-color: #f8f9facc;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+.HeaderSection .col-md-4 {
+    padding-right: 0px;
+}
+
+.HeaderLeft {
+    margin-left: 60px;
+}
+
+.HeaderLeft h2 {
+    font-size: 45px;
+    font-weight: 900;
+    margin-bottom: 25px;
+}
+
+.HeaderLeft p {
+    color: #797878;
+    margin-bottom: 25px;
+}
+
+.HeaderLeft button {
+    background-image: linear-gradient(90deg,#19D3AF, #0FCFE9);
+    border: none;
+    padding: 8px 20px;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #fff;
+}
+
+.HeaderLeft button:hover {
+    background-image: linear-gradient(90deg,#0FCFE9, #19D3AF);
+}
+
+.HeaderLeft button:focus {
+    outline: none;
+}
+
+.HeaderRight {
+    background-color: #3A4256;
+    padding: 150px 0px;
+}
+
+.HeaderRight img {
+    margin-left: -180px;
+    width: 570px;
+    height: auto;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: rgba(0, 0, 0, 0.5);
+    margin: 0px 15px;
+    font-weight: 500;
+}
+
+
