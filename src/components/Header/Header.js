@@ -1,6 +1,7 @@
 import React from 'react';
 import './Header.css'
 import headerImg from '../../images/Mask Group 1.png'
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
@@ -11,7 +12,7 @@ const Header = () => {
                         <div className="HeaderLeft">
                             <h2>Your New Smile Starts Here</h2>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis commodi nostrum quas, ex suscipit necessitatibus a dignissimos at asperiores labore. Lorem ipsum dolor sit amet.</p>
-                            <button>Get Appointment</button>
+                            <Link to="/getAppointment"><button>Get Appointment</button></Link>
                         </div>
                     </div>
                     <div className="col-md-4">

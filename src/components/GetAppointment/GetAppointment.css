@@ -1,0 +1,31 @@
+.GetAppointmentSection {
+    background-image: url(../../images/Mask\ Group\ 1.png);
+    background-attachment: fixed;
+    background-size: cover;
+    
+}
+
+.GetAppointmentContent {
+    background-color: #f8f9facc;
+    padding: 130px 0px;
+}
+
+.react-calendar {
+    width: 400px;
+    max-width: 100%;
+    background: white;
+    border: 1px solid white;
+    padding: 40px 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.125em;
+    border-radius: 10px;
+}
+
+.react-calendar button {
+    border-radius: 8px;
+    margin: 0px 2px;
+}
+
+.react-calendar button:focus {
+    outline: none;
+}
