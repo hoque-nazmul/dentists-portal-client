@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Calendar from 'react-calendar';
 import img from '../../images/Mask Group 1.png'
 import { useState } from 'react';
@@ -7,11 +7,23 @@ import './GetAppointment.css'
 
 const GetAppointment = () => {
     const [date, setDate] = useState(new Date());
+    const [treatments, setTreatments] = useState(null);
 
-     const onChange = date => {
-          setDate(date);
-      }
-      
+    useEffect(()=> {
+        fetch('http://localhost:4000/getTreatments')
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                setTreatments(data);
+            })
+    }, []);
+
+    console.log(treatments);
+
+    const onChange = date => {
+        setDate(date);
+    }
+
     return (
         <div className="GetAppointmentSection">
             <div className="GetAppointmentContent">
@@ -30,7 +42,7 @@ const GetAppointment = () => {
                         </div>
                         <div className="col-md-6">
                             <div className="GetAppointmentImg">
-                                <img src={img} alt="" className="img-fluid"/>
+                                <img src={img} alt="" className="img-fluid" />
                             </div>
                         </div>
                     </div>
