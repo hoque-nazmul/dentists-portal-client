@@ -54,6 +54,13 @@ const GetAppointment = () => {
             })
     }
 
+    // After Getting Appointment Redirect to Homepage
+    if(appointmentMsg) {
+        setTimeout( () => {
+            window.location.pathname = '/';
+        }, 8000)
+    }
+
     return (
         <div className="GetAppointmentSection">
             {
@@ -107,26 +114,36 @@ const GetAppointment = () => {
                                     {
                                         appointmentInfo &&
                                         <div className="FormContent">
-                                            <h2>{appointmentInfo.bookedName}</h2>
-                                            <form onSubmit={handleSubmit(onSubmit)}>
-                                                <select name="time" id="data" ref={register({ required: true })}>
-                                                    {treatments.map(treatment => <option key={treatment.key} value={treatment.time}>{treatment.time}</option>)}
-                                                </select>
-                                                {errors.time && <span className="inputError">Time is required</span>}
+                                            {
+                                                appointmentMsg ?
+                                                    <div className="AppointmentMsg">
+                                                        <h2>Thanks {appointmentMsg.name} for Appointment</h2>
+                                                        <p>Your Appointment ID: {appointmentMsg._id}</p>
+                                                    </div>
+                                                    :
+                                                    <div>
+                                                        <h2>{appointmentInfo.bookedName}</h2>
+                                                        <form onSubmit={handleSubmit(onSubmit)}>
+                                                            <select name="time" id="data" ref={register({ required: true })}>
+                                                                {treatments.map(treatment => <option key={treatment.key} value={treatment.time}>{treatment.time}</option>)}
+                                                            </select>
+                                                            {errors.time && <span className="inputError">Time is required</span>}
 
-                                                <input name="name" ref={register({ required: true })} placeholder="Your Name" />
-                                                {errors.name && <span className="inputError">Name is required</span>}
+                                                            <input name="name" ref={register({ required: true })} placeholder="Your Name" />
+                                                            {errors.name && <span className="inputError">Name is required</span>}
 
-                                                <input name="email" ref={register({ required: true })} placeholder="Your Email" />
-                                                {errors.email && <span className="inputError">Email is required</span>}
+                                                            <input name="email" ref={register({ required: true })} placeholder="Your Email" />
+                                                            {errors.email && <span className="inputError">Email is required</span>}
 
-                                                <input name="phone" ref={register({ required: true })} placeholder="Your Phone" />
-                                                {errors.phone && <span className="inputError">Phone is required</span>}
+                                                            <input name="phone" ref={register({ required: true })} placeholder="Your Phone" />
+                                                            {errors.phone && <span className="inputError">Phone is required</span>}
 
-                                                <input name="date" ref={register({ required: true })} value={appointmentInfo.bookedDate} readOnly />
+                                                            <input name="date" ref={register({ required: true })} value={appointmentInfo.bookedDate} readOnly />
 
-                                                <input type="submit" className="mainBtn" value="Send" />
-                                            </form>
+                                                            <input type="submit" className="mainBtn" value="Send" />
+                                                        </form>
+                                                    </div>
+                                            }
                                         </div>
                                     }
                                 </div>

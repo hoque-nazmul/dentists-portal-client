@@ -94,3 +94,18 @@
     width: 200px;
     border-radius: 5px;
 }
+
+.AppointmentMsg h2 {
+    color: #1CC7C1;
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.AppointmentMsg p {
+    color: #ADABAB;
+    font-size: 18px;
+}
+
+.AppointmentMsg {
+    margin-bottom: 40px;
+}
