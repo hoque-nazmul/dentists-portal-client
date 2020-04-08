@@ -9,11 +9,13 @@ import {
   Link
 } from "react-router-dom";
 import NotFound from './components/NotFound/NotFound';
+import Navbar from './components/Navbar/Navbar';
 
 function App() {
   return (
     <Router>
       <div className="App">
+        <Navbar></Navbar>
         <Switch>
           <Route path="/getAppointment">
             <GetAppointment></GetAppointment>
