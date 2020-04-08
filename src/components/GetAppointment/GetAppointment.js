@@ -13,6 +13,7 @@ const GetAppointment = () => {
     const [appointmentInfo, setAppointmentInfo] = useState(null);
     const [appointmentForm, setAppointmentForm] = useState(null);
 
+    // GET Treatments lists from Server
     useEffect(() => {
         fetch('http://localhost:4000/getTreatments')
             .then(res => res.json())
@@ -21,20 +22,36 @@ const GetAppointment = () => {
             })
     }, []);
 
+    // Stored Clicked Date to State
     const onChange = date => {
         setDate(date);
     }
 
+    // Stored Appointment Data to State
     const handleBookedAppointment = (bookedAppointment) => {
-        const bookedinfo = bookedAppointment;
+        const bookedName = bookedAppointment.name;
+        const bookedTime = bookedAppointment.time;
         const bookedDate = date.toLocaleDateString();
-        const bookedData = { bookedinfo, bookedDate }
+        const bookedData = { bookedName, bookedTime, bookedDate }
         setAppointmentInfo(bookedData);
         setAppointmentForm(true);
     }
 
+    // Handle Appointment Submission
     const { register, handleSubmit, errors } = useForm()
-    const onSubmit = data => { console.log(data) }
+    const onSubmit = data => {
+        fetch('http://localhost:4000/addAppointment', {
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers: {
+                "Content-type": "application/json; charset=UTF-8"
+            }
+        })
+            .then(response => response.json())
+            .then(appointment => {
+                console.log(appointment)
+            })
+    }
 
     return (
         <div className="GetAppointmentSection">
@@ -86,19 +103,33 @@ const GetAppointment = () => {
                     <div className="AppointmentFormWrapper">
                         <div className="container">
                             <div className="row">
-                                <div className="col-md-6 offset-md-3">
-                                    <form onSubmit={handleSubmit(onSubmit)}>
-                                        <input name="example" defaultValue="test" ref={register} />
-                                        <select name="time" id="data" ref={register({ required: true })}>
-                                            {treatments.map(treatment => <option key={treatment.key} value={treatment.time}>{treatment.time}</option>)}
-                                        </select>
-                                        {errors.exampleRequired && <span>This field is required</span>}
-                                        <input name="exampleRequired" ref={register({ required: true })} />
-                                        {/* errors will return when field validation fails  */}
-                                        {errors.exampleRequired && <span>This field is required</span>}
+                                <div className="col-md-8 offset-md-2">
 
-                                        <input type="submit" />
-                                    </form>
+                                    {
+                                        appointmentInfo &&
+                                        <div className="FormContent">
+                                            <h2>{appointmentInfo.bookedName}</h2>
+                                            <form onSubmit={handleSubmit(onSubmit)}>
+                                                <select name="time" id="data" ref={register({ required: true })}>
+                                                    {treatments.map(treatment => <option key={treatment.key} value={treatment.time}>{treatment.time}</option>)}
+                                                </select>
+                                                {errors.time && <span className="inputError">Time is required</span>}
+
+                                                <input name="name" ref={register({ required: true })} placeholder="Your Name" />
+                                                {errors.name && <span className="inputError">Name is required</span>}
+
+                                                <input name="email" ref={register({ required: true })} placeholder="Your Email" />
+                                                {errors.email && <span className="inputError">Email is required</span>}
+
+                                                <input name="phone" ref={register({ required: true })} placeholder="Your Phone" />
+                                                {errors.phone && <span className="inputError">Phone is required</span>}
+
+                                                <input name="date" ref={register({ required: true })} value={appointmentInfo.bookedDate} readOnly />
+
+                                                <input type="submit" className="mainBtn" value="Send" />
+                                            </form>
+                                        </div>
+                                    }
                                 </div>
                             </div>
                         </div>

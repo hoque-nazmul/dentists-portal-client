@@ -44,5 +44,53 @@
 
 .AppointmentStoredForm {
     background-color: #f8f9facc;
-    padding: 130px 0px;
+    padding: 100px 0px;
+}
+
+.FormContent {
+    background: #fff;
+    padding: 40px 50px;
+    border-radius: 10px;
+}
+
+.FormContent h2 {
+    color: #1CC7C1;
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.FormContent input, .FormContent select {
+    display: block;
+    width: 100%;
+    height: 45px;
+    background: #F5F5F5;
+    border: 1px solid #F5F5F5;
+    margin-top: 20px;
+    padding: 0px 12px;
+    border-radius: 8px;
+    color: gray;
+}
+
+.FormContent input:focus, .FormContent select:focus{
+    outline: none;
+}
+
+.inputError {
+    font-size: 15px;
+    color: red;
+    margin-left: 5px;
+}
+
+.FormContent input[type='submit'] {
+    background-image: linear-gradient(90deg,#19D3AF, #0FCFE9);
+    border: none;
+    padding: 8px 20px;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #fff;
+    margin-left: auto;
+    height: 45px;
+    width: 200px;
+    border-radius: 5px;
 }
