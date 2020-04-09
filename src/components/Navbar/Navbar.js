@@ -16,22 +16,22 @@ const Navbar = () => {
                                 <a className="nav-link" href="/">Home <span className="sr-only">(current)</span></a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/doctorsAppointment" target="_blank">Doctor's Appointemnt</a>
+                                <a className="nav-link" href="/doctorsAppointment" target="_blank">Doctor's Dashboard</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/doctorsDashboard" target="_blank">Doctor's Dashboard</a>
+                                <a className="nav-link" href="/doctorsDashboard" target="_blank">Doctor's Appointemnt</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/">Blog</a>
+                                <a className="nav-link" href="/patients" target="_blank">Patients</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/">Contact us</a>
+                                <a className="nav-link" href="/404" target="_blank">Contact us</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/">Review</a>
+                                <a className="nav-link" href="/404" target="_blank">Review</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/">About</a>
+                                <a className="nav-link" href="/404" target="_blank">About</a>
                             </li>
                         </ul>
                     </div>
