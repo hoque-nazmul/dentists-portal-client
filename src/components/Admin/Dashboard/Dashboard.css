@@ -9753,3 +9753,38 @@ body {
   font-size: 22px;
   margin-bottom: 20px;
 }
+
+.dashboardTop {
+  padding: 20px 0px;
+  margin-top: 10px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.dashboardTopContent p {
+  margin-bottom: 0px;
+  color: #D7F6ED;
+}
+
+.dashboardTopContent h2 {
+  font-size: 55px;
+  font-weight: 800;
+  color: #fff;
+  margin-right: 15px;
+}
+
+.one {
+  background-color: #F1536E;
+}
+
+.two {
+  background-color: #3DA5F4;
+}
+
+.three {
+  background-color: #00C689;
+}
+
+.four {
+  background-color: #FDA006;
+}

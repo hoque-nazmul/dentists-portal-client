@@ -18,6 +18,16 @@ const Dashboard = () => {
             })
     }, [])
 
+    const todayAppointments = appointments.filter(data => data.date === new Date().toLocaleDateString());
+    const totalPetient = [];
+    for (let i = 0; i < appointments.length; i++) {
+        const data = appointments[i];
+        const name = data.name;
+        if(totalPetient.indexOf(name) === -1){
+            totalPetient.push(name);
+        }
+    }
+
     return (
         <div className="AdminPanel">
             {/* Admin Navbar */}
@@ -30,41 +40,49 @@ const Dashboard = () => {
                 <div id="layoutSidenav_content">
                     <main>
                         <div className="container-fluid">
-                            <h1 className="my-2">Dashboard</h1>
+                            <h1 className="my-2" style={{ fontSize: '30px' }}>Doctor's Dashboard</h1>
                             <div className="row">
                                 <div className="col-xl-3 col-md-6">
-                                    <div className="card bg-primary text-white mb-4">
-                                        <div className="card-body">Primary Card</div>
-                                        <div className="card-footer d-flex align-items-center justify-content-between">
-                                            <a className="small text-white stretched-link" href="/hello">View Details</a>
-                                            <div className="small text-white"><i className="fas fa-angle-right"></i></div>
+                                    <div className="dashboardTop one">
+                                        <div className="dashboardTopContent d-flex align-items-center justify-content-center">
+                                            <h2>{appointments.length}</h2>
+                                            <div className="dashboradContentPara">
+                                                <p>Pending</p>
+                                                <p>Appointments</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="col-xl-3 col-md-6">
-                                    <div className="card bg-warning text-white mb-4">
-                                        <div className="card-body">Warning Card</div>
-                                        <div className="card-footer d-flex align-items-center justify-content-between">
-                                            <a className="small text-white stretched-link" href="/hello">View Details</a>
-                                            <div className="small text-white"><i className="fas fa-angle-right"></i></div>
+                                <div className="dashboardTop two">
+                                        <div className="dashboardTopContent d-flex align-items-center justify-content-center">
+                                            <h2>{ todayAppointments.length }</h2>
+                                            <div className="dashboradContentPara">
+                                                <p>Today's</p>
+                                                <p>Appointments</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="col-xl-3 col-md-6">
-                                    <div className="card bg-success text-white mb-4">
-                                        <div className="card-body">Success Card</div>
-                                        <div className="card-footer d-flex align-items-center justify-content-between">
-                                            <a className="small text-white stretched-link" href="/hello">View Details</a>
-                                            <div className="small text-white"><i className="fas fa-angle-right"></i></div>
+                                    <div className="dashboardTop three">
+                                        <div className="dashboardTopContent d-flex align-items-center justify-content-center">
+                                            <h2>{appointments.length}</h2>
+                                            <div className="dashboradContentPara">
+                                                <p>Total</p>
+                                                <p>Appointments</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="col-xl-3 col-md-6">
-                                    <div className="card bg-danger text-white mb-4">
-                                        <div className="card-body">Danger Card</div>
-                                        <div className="card-footer d-flex align-items-center justify-content-between">
-                                            <a className="small text-white stretched-link" href="/hello">View Details</a>
-                                            <div className="small text-white"><i className="fas fa-angle-right"></i></div>
+                                    <div className="dashboardTop four">
+                                        <div className="dashboardTopContent d-flex align-items-center justify-content-center">
+                                            <h2>{totalPetient.length}</h2>
+                                            <div className="dashboradContentPara">
+                                                <p>Total</p>
+                                                <p>Patients</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
