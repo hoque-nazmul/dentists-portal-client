@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/static/css/main.1b273400.chunk.css",
+    "main.js": "/static/js/main.e93bddb2.chunk.js",
+    "main.js.map": "/static/js/main.e93bddb2.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.8600d6a5.js",
+    "runtime-main.js.map": "/static/js/runtime-main.8600d6a5.js.map",
+    "static/css/2.e0b663ed.chunk.css": "/static/css/2.e0b663ed.chunk.css",
+    "static/js/2.a1d0878d.chunk.js": "/static/js/2.a1d0878d.chunk.js",
+    "static/js/2.a1d0878d.chunk.js.map": "/static/js/2.a1d0878d.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.7db5be01c1f59c9ccf589c86360a7e2d.js": "/precache-manifest.7db5be01c1f59c9ccf589c86360a7e2d.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.e0b663ed.chunk.css.map": "/static/css/2.e0b663ed.chunk.css.map",
+    "static/css/main.1b273400.chunk.css.map": "/static/css/main.1b273400.chunk.css.map",
+    "static/js/2.a1d0878d.chunk.js.LICENSE.txt": "/static/js/2.a1d0878d.chunk.js.LICENSE.txt",
+    "static/media/GetAppointment.css": "/static/media/Mask Group 1.f112c368.png",
+    "static/media/NotFound.css": "/static/media/error_bg.3644ee70.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8600d6a5.js",
+    "static/css/2.e0b663ed.chunk.css",
+    "static/js/2.a1d0878d.chunk.js",
+    "static/css/main.1b273400.chunk.css",
+    "static/js/main.e93bddb2.chunk.js"
+  ]
+}

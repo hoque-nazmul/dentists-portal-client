@@ -19,7 +19,7 @@ const AdminSideBar = () => {
                                 Patients</a>
                         <a className="nav-link" href="/getPrescription"><div className="sb-nav-link-icon"><FontAwesomeIcon icon={faFileAlt} /></div>
                                 Prescriptions</a>
-                        <a className="nav-link" href="/hello" target="_blank"
+                        <a className="nav-link" href="/hello"
                         ><div className="sb-nav-link-icon"><FontAwesomeIcon icon={faCog} /></div>
                                 Settings</a>
                     </div>
