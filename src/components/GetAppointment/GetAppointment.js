@@ -16,7 +16,7 @@ const GetAppointment = () => {
 
     // GET Treatments lists from Server
     useEffect(() => {
-        fetch('http://localhost:4000/getTreatments')
+        fetch('http://localhost:4000/')
             .then(res => res.json())
             .then(data => {
                 setTreatments(data);
