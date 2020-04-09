@@ -8,10 +8,25 @@ import { useState } from 'react';
 
 const Appointments = () => {
     const [date, setDate] = useState(new Date());
+    const [appointments, setAppointments] = useState([]);
 
 
     // Stored Clicked Date to State
     const onChange = date => {
+        const localDate = date.toLocaleDateString();
+        fetch('http://localhost:4000/appointmentsByDate', {
+            method: 'POST',
+            body: JSON.stringify({localDate}),
+            headers: {
+                "Content-type": "application/json; charset=UTF-8"
+            }
+        })
+            .then(res => res.json())
+            .then(appointment => {
+                setAppointments(appointment);
+                console.log(appointments);
+            })
+
         setDate(date);
     }
     return (

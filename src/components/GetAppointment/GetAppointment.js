@@ -58,7 +58,7 @@ const GetAppointment = () => {
     if(appointmentMsg) {
         setTimeout( () => {
             window.location.pathname = '/';
-        }, 8000)
+        }, 5000)
     }
 
     return (
