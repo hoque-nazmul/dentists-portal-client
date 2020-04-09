@@ -14,13 +14,13 @@ const AdminSideBar = () => {
                         <a className="nav-link" href="/doctorsAppointment"
                         ><div className="sb-nav-link-icon"><FontAwesomeIcon icon={faCalendarCheck} /></div>
                                 Doctor's Appointment</a>
-                        <a className="nav-link" href="/hello"
+                        <a className="nav-link" href="/patients"
                         ><div className="sb-nav-link-icon"><FontAwesomeIcon icon={faUserFriends} /></div>
                                 Patients</a>
-                        <a className="nav-link" href="/hello"
+                        <a className="nav-link" href="/hello" target="_blank"
                         ><div className="sb-nav-link-icon"><FontAwesomeIcon icon={faFileAlt} /></div>
                                 Prescriptions</a>
-                        <a className="nav-link" href="/hello"
+                        <a className="nav-link" href="/hello" target="_blank"
                         ><div className="sb-nav-link-icon"><FontAwesomeIcon icon={faCog} /></div>
                                 Settings</a>
                     </div>

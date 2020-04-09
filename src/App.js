@@ -7,6 +7,7 @@ import NotFound from './components/NotFound/NotFound';
 import Navbar from './components/Navbar/Navbar';
 import Dashboard from './components/Admin/Dashboard/Dashboard';
 import Appointments from './components/Admin/Appointments/Appointments';
+import Patients from './components/Admin/Patients/Patients';
 
 function App() {
   return (
@@ -22,6 +23,9 @@ function App() {
           </Route>
           <Route path="/doctorsAppointment">
             <Appointments></Appointments>
+          </Route>
+          <Route path="/patients">
+            <Patients></Patients>
           </Route>
           <Route exact path="/">
             <Navbar></Navbar>
