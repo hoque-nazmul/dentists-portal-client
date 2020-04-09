@@ -12,7 +12,7 @@ const Appointments = () => {
     const [activeAppointment, setActiveAppointment] = useState(null);
 
     // const today = new Date().toLocaleDateString();
-    //     fetch('http://localhost:4000/appointmentsByToday', {
+    //     fetch('https://pacific-sierra-92196.herokuapp.com/appointmentsByToday', {
     //         method: 'POST',
     //         body: JSON.stringify({today}),
     //         headers: {
@@ -28,7 +28,7 @@ const Appointments = () => {
     // Stored Clicked Date to State
     const onChange = date => {
         const localDate = date.toLocaleDateString();
-        fetch('http://localhost:4000/appointmentsByDate', {
+        fetch('https://pacific-sierra-92196.herokuapp.com/appointmentsByDate', {
             method: 'POST',
             body: JSON.stringify({ localDate }),
             headers: {

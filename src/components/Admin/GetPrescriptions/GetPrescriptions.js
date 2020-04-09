@@ -9,7 +9,7 @@ const GetPrescriptions = () => {
     const [prescriptions, setPrescriptions] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:4000/getPrescription')
+        fetch('https://pacific-sierra-92196.herokuapp.com/getPrescription')
             .then(res => res.json())
             .then(data => {
                 setPrescriptions(data);

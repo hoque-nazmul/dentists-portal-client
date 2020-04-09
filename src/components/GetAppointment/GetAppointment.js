@@ -16,7 +16,7 @@ const GetAppointment = () => {
 
     // GET Treatments lists from Server
     useEffect(() => {
-        fetch('http://localhost:4000/getTreatments')
+        fetch('https://pacific-sierra-92196.herokuapp.com/getTreatments')
             .then(res => res.json())
             .then(data => {
                 setTreatments(data);
@@ -41,7 +41,7 @@ const GetAppointment = () => {
     // Handle Appointment Submission
     const { register, handleSubmit, errors } = useForm()
     const onSubmit = data => {
-        fetch('http://localhost:4000/addAppointment', {
+        fetch('https://pacific-sierra-92196.herokuapp.com/addAppointment', {
             method: 'POST',
             body: JSON.stringify(data),
             headers: {

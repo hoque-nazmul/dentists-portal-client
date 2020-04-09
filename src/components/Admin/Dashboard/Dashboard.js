@@ -15,7 +15,7 @@ const Dashboard = () => {
     const [prescribedMsg, setPrescrivedMsg] = useState(null);
 
     useEffect(() => {
-        fetch('http://localhost:4000/getAppointments')
+        fetch('https://pacific-sierra-92196.herokuapp.com/getAppointments')
             .then(res => res.json())
             .then(data => {
                 setAppointments(data);
@@ -40,7 +40,7 @@ const Dashboard = () => {
     // Handle Send Prescrition
     const { register, handleSubmit, errors } = useForm()
     const onSubmit = prescribedData => {
-        fetch('http://localhost:4000/addPrescription', {
+        fetch('https://pacific-sierra-92196.herokuapp.com/addPrescription', {
             method: 'POST',
             body: JSON.stringify(prescribedData),
             headers: {

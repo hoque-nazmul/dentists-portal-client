@@ -9,7 +9,7 @@ const Patients = () => {
     const [appointments, setAppointments] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:4000/getAppointments')
+        fetch('https://pacific-sierra-92196.herokuapp.com/getAppointments')
             .then(res => res.json())
             .then(data => {
                 setAppointments(data);
