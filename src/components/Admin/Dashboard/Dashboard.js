@@ -2,9 +2,22 @@ import React from 'react';
 import './Dashboard.css'
 import AdminNavbar from '../Children/AdminNavbar/AdminNavbar';
 import AdminSideBar from '../Children/AdminSideBar/AdminSideBar';
-import Table from '../Children/Table/Table';
+import { useState } from 'react';
+import { useEffect } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPen } from '@fortawesome/free-solid-svg-icons'
 
 const Dashboard = () => {
+    const [appointments, setAppointments] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:4000/getAppointments')
+            .then(res => res.json())
+            .then(data => {
+                setAppointments(data);
+            })
+    }, [])
+
     return (
         <div className="AdminPanel">
             {/* Admin Navbar */}
@@ -57,9 +70,45 @@ const Dashboard = () => {
                                 </div>
                             </div>
 
-                            {/* Data Table */}
-                                <Table></Table>
-                            {/* Data Table */}
+                            <div className="AppointmentDataTable">
+                                <h2>Appointments Data Table</h2>
+                                <table className="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Date</th>
+                                            <th scope="col">Time</th>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">Contact</th>
+                                            <th scope="col">Prescription</th>
+                                            <th scope="col">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th scope="col">Date</th>
+                                            <th scope="col">Time</th>
+                                            <th scope="col">Name</th>
+                                            <th scope="col">Contact</th>
+                                            <th scope="col">Prescription</th>
+                                            <th scope="col">Action</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                        {
+                                            appointments.length > 0 ?
+                                                appointments.map(appointment => <tr key={appointment._id}>
+                                                    <td>{appointment.date}</td>
+                                                    <td>{appointment.time}</td>
+                                                    <td>{appointment.name}</td>
+                                                    <td>{appointment.phone}</td>
+                                                    <td><button className="mainBtn">Not Added</button></td>
+                                                    <td><button className="TableActionBtn">Pending</button><button className="btnIcon"><FontAwesomeIcon icon={faPen} /></button></td>
+                                                </tr>)
+                                                : <tr id="preloder"><td className="loader"></td></tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
 
                         </div>
                     </main>

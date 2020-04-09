@@ -7,7 +7,7 @@ const AdminSideBar = () => {
         <div id="layoutSidenav_nav">
             <nav className="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                 <div className="sb-sidenav-menu">
-                    <div className="nav">
+                    <div className="nav  mt-4">
                         <a className="nav-link" href="/doctorsDashboard"
                         ><div className="sb-nav-link-icon"><FontAwesomeIcon icon={faChartLine} /></div>
                                 Doctor's Dashboard</a>
