@@ -45,3 +45,11 @@
     font-size: 14px;
     font-weight: 500;
 }
+
+.Appointment .alertAppointment {
+    color: red;
+    padding-top: 102px;
+    text-align: center;
+    font-size: 22px;
+    line-height: 1.5em;
+}

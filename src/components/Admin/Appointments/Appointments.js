@@ -9,14 +9,28 @@ import { useState } from 'react';
 const Appointments = () => {
     const [date, setDate] = useState(new Date());
     const [appointments, setAppointments] = useState([]);
+    const [activeAppointment, setActiveAppointment] = useState(null);
 
+    // const today = new Date().toLocaleDateString();
+    //     fetch('http://localhost:4000/appointmentsByToday', {
+    //         method: 'POST',
+    //         body: JSON.stringify({today}),
+    //         headers: {
+    //             "Content-type": "application/json; charset=UTF-8"
+    //         }
+    //     })
+    //         .then(res => res.json())
+    //         .then(todayAppointments => {
+    //             setTodayAppointments(todayAppointments);
+    //             console.log(todayAppointments);
+    //         })
 
     // Stored Clicked Date to State
     const onChange = date => {
         const localDate = date.toLocaleDateString();
         fetch('http://localhost:4000/appointmentsByDate', {
             method: 'POST',
-            body: JSON.stringify({localDate}),
+            body: JSON.stringify({ localDate }),
             headers: {
                 "Content-type": "application/json; charset=UTF-8"
             }
@@ -24,9 +38,8 @@ const Appointments = () => {
             .then(res => res.json())
             .then(appointment => {
                 setAppointments(appointment);
-                console.log(appointments);
+                setActiveAppointment(true);
             })
-
         setDate(date);
     }
     return (
@@ -65,13 +78,21 @@ const Appointments = () => {
                                                     <th scope="col">Action</th>
                                                 </tr>
                                             </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>Mark</td>
-                                                    <td>Otto</td>
-                                                    <td><button className="TableActionBtn">Not Visited</button></td>
-                                                </tr>
-                                            </tbody>
+                                            {
+                                                activeAppointment ?
+                                                <tbody>
+                                                {
+                                                    appointments.length > 0 ?
+                                                    appointments.map(data => <tr key={data._id}>
+                                                        <td>{data.name}</td>
+                                                        <td>{data.time}</td>
+                                                        <td><button className="TableActionBtn">Not Visited</button></td>
+                                                    </tr>)
+                                                    : <tr><td colSpan='3' className="alertAppointment">You haven't any appointment on this date.</td></tr>
+                                                }
+                                                </tbody>
+                                                :<tbody><tr><td colSpan='3' className="alertAppointment">You have to select a date to show Appointments by selected date.</td></tr></tbody>
+                                            }
                                         </table>
                                     </div>
                                 </div>
