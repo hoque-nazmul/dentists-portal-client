@@ -25,7 +25,7 @@ const Navbar = () => {
                                 <a className="nav-link" href="/patients" target="_blank">Patients</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="/404" target="_blank">Contact us</a>
+                                <a className="nav-link" href="/getPrescription" target="_blank">Prescriptions</a>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="/404" target="_blank">Review</a>
