@@ -9788,3 +9788,9 @@ body {
 .four {
   background-color: #FDA006;
 }
+
+.prescribeMsg {
+  font-size: 17px;
+  color: green;
+  margin-left: auto;
+}
