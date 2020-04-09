@@ -57,7 +57,7 @@ const Dashboard = () => {
     // Redirect
     if (prescribedInfo) {
         setTimeout(() => {
-            window.location.pathname = '/doctorsDashboard'
+            window.location.pathname = '/getPrescription'
         }, 3000)
     }
 
