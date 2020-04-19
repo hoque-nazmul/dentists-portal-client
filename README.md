@@ -44,7 +44,7 @@ The web application backend is built on express.js. Data is stored in a MongoDB 
  - Demo: https://dentists-portal.web.app/
  - Server: https://github.com/nazmul98/dentists-portal-server
 
-### Screenshot of Homepage
+### Screenshots
  <img src="src/images/homepage.png">
  <img src="src/images/getAppointment.png">
  <img src="src/images/doctor's dashboard.png">
